@@ -14,9 +14,9 @@ func TestG(t *testing.T) {
 		return []G{a, b, c}
 	}
 
-	fmt.Printf("%+v\n", f(1, 2, 3))
-	fmt.Printf("%+v\n", f(1, "two", 3))
-	fmt.Printf("%+v\n", f(1, 2.1, 3))
-	fmt.Printf("%+v\n", f(1, []byte{}, 3))
-	fmt.Printf("%+v\n", f(1, time.Time{}, 3))
+	t.Logf("%+v\n", f(1, 2, 3))
+	t.Logf("%+v\n", f(1, "two", 3))
+	t.Logf("%+v\n", f(1, 2.1, 3))
+	t.Logf("%+v\n", f(1, []byte{}, 3))
+	t.Logf("%+v\n", f(1, time.Time{}, 3))
 }
