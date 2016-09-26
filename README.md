@@ -50,6 +50,15 @@ Clearly, the latter example is far superior, as it screams its intent loud and p
 # Backwards Compatibility
 `G` meets the standard of golang by matching its stance on backwards compatibility. Until a 2.0 release of generics, which may never happen, `G` will always be 100% Backwards compatible with it's initial 1.0 release.
 
+# On Law 8
+One possible conflict golang gophers might have is reconciling the use of a small, but well designed, library such as package generics with Law 8: `A little copying is better than a little dependency.`. So long as all licensing restrictions on the software are adhered to, I have no issue with anyone who wishes to copy, rather than import, the full weight of package generics and its revolutionary `G` type.
+
+That said, the idea behind `G` is that it would be compatible across libraries. Until such time as the community-driven `alias` feature being added to an upcoming release of golang, package which implement their own `G` type will find it incompatible with other packages using a different `G`.
+
+With that in mind, until the much sought after `alias` feature is added to golang, I would suggest individuals import the library at this time, so as to maintain full compatibility across the golang universe. Until the `alias` syntax arrives, there simply is no clear way to maintain both universal compatibility, and follow Law 8.
+
+It's my sincere hope that golanging gophers everywhere are willing to accept this temporary tradeoff. As soon as `alias` is delivered unto us, I will update this section with official guidelines and best practices on using `alias` with `G`.
+
 # Afterword
 I hope you enjoy programming with generics as much as I do. The best part about golang is the involvement of the community in shaping the future of the language. Remember:
 
