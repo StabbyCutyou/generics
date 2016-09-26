@@ -129,6 +129,22 @@ func TestComplex128(t *testing.T) {
 	}
 }
 
+func TestByte(t *testing.T) {
+	var original byte
+	result := func(g G) G { return g }(original)
+	if !reflect.DeepEqual(original, result) {
+		t.Fail()
+	}
+}
+
+func TestRune(t *testing.T) {
+	var original rune
+	result := func(g G) G { return g }(original)
+	if !reflect.DeepEqual(original, result) {
+		t.Fail()
+	}
+}
+
 func TestString(t *testing.T) {
 	var original string
 	result := func(g G) G { return g }(original)
