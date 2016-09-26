@@ -1,5 +1,5 @@
 # Generics
-[![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/StabbyCutyou/generics)
+[![GoDoc](http://img.shields.io/badge/go-documentation-blue.svg?style=flat-square)](http://godoc.org/github.com/StabbyCutyou/generics) [![Build Status](https://travis-ci.org/StabbyCutyou/generics.svg)](https://travis-ci.org/StabbyCutyou/generics)
 
 When writing golang code, there are a series of [immutable, irrefutable laws ](https://go-proverbs.github.io/) that you're required to follow. One of these laws states the following:
 
