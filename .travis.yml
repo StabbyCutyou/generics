@@ -2,7 +2,7 @@ language: go
 
 go:
   - 1.0
-  - 1.0.1
+  #- 1.0.1 1.0.1 is currently not running tests on Travis CI. Until multi-CI support is enabled, golang gophers pinned to backwards compatible 1.0.1 should be careful about running package generics, before testing it locally yourselves.
   - 1.0.2
   - 1.0.3
   - 1.1
@@ -31,6 +31,3 @@ go:
   - 1.7
   - 1.7.1
   - tip
-
-script:
-  - go test
