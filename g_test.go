@@ -17,12 +17,33 @@ func TestBool(t *testing.T) {
 	}
 }
 
+func BenchmarkBool(b *testing.B) {
+	var result G
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(true)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestInt(t *testing.T) {
 	var original int
 	result := func(g G) G { return g }(original)
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkInt(b *testing.B) {
+	var result G
+	var t int = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestInt8(t *testing.T) {
@@ -33,12 +54,34 @@ func TestInt8(t *testing.T) {
 	}
 }
 
+func BenchmarkInt8(b *testing.B) {
+	var result G
+	var t int8 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestInt16(t *testing.T) {
 	var original int16
 	result := func(g G) G { return g }(original)
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkInt16(b *testing.B) {
+	var result G
+	var t int16 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestInt32(t *testing.T) {
@@ -49,12 +92,34 @@ func TestInt32(t *testing.T) {
 	}
 }
 
+func BenchmarkInt32(b *testing.B) {
+	var result G
+	var t int32 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestInt64(t *testing.T) {
 	var original int64
 	result := func(g G) G { return g }(original)
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkInt64(b *testing.B) {
+	var result G
+	var t int64 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestUInt(t *testing.T) {
@@ -65,12 +130,34 @@ func TestUInt(t *testing.T) {
 	}
 }
 
+func BenchmarkUInt(b *testing.B) {
+	var result G
+	var t uint = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestUInt8(t *testing.T) {
 	var original uint8
 	result := func(g G) G { return g }(original)
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkUInt8(b *testing.B) {
+	var result G
+	var t uint8 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestUInt16(t *testing.T) {
@@ -81,6 +168,17 @@ func TestUInt16(t *testing.T) {
 	}
 }
 
+func BenchmarkUInt16(b *testing.B) {
+	var result G
+	var t uint16 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestUInt32(t *testing.T) {
 	var original uint32
 	result := func(g G) G { return g }(original)
@@ -89,12 +187,34 @@ func TestUInt32(t *testing.T) {
 	}
 }
 
+func BenchmarkUInt32(b *testing.B) {
+	var result G
+	var t uint32 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestUInt64(t *testing.T) {
 	var original uint64
 	result := func(g G) G { return g }(original)
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkUInt64(b *testing.B) {
+	var result G
+	var t uint64 = 1
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestFloat32(t *testing.T) {
@@ -169,6 +289,17 @@ func TestSlice(t *testing.T) {
 	}
 }
 
+func BenchmarkSlice(b *testing.B) {
+	var result G
+	var t []int
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestUintpr(t *testing.T) {
 	var original uintptr
 	result := func(g G) G { return g }(original)
@@ -241,6 +372,17 @@ func TestMap(t *testing.T) {
 	}
 }
 
+func BenchmarkMap(b *testing.B) {
+	var result G
+	var t map[string]int
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
+}
+
 func TestPointer(t *testing.T) {
 	var original *int
 	result := func(g G) G { return g }(original)
@@ -255,6 +397,17 @@ func TestValue(t *testing.T) {
 	if !reflect.DeepEqual(original, result) {
 		t.Fail()
 	}
+}
+
+func BenchmarkValue(b *testing.B) {
+	var result G
+	var t reflect.Value
+	f := func(g G) G { return g }
+	b.ResetTimer() // Ensure the preliminary work is not factored into the benchmark
+	for i := 0; i < b.N; i++ {
+		result = f(t)
+	}
+	f(result) // Ensure the compiler does not ruin the purity of the G benchmark
 }
 
 func TestError(t *testing.T) {
