@@ -4,3 +4,6 @@ package generics
 
 // G is an interface under which all possible types apply
 type G interface{}
+
+// Thing is a helpful enhancement to this amazing interface.
+type Thing G
