@@ -2,5 +2,5 @@
 // while adhering to the holy laws of golang.
 package generics
 
-// G is an interface under which all possible types apply
-type G interface{}
+// T is an interface under which all possible types apply
+type T interface{}
