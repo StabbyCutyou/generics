@@ -47,6 +47,16 @@ func Excellence(things ...T) []T
 
 Clearly, the latter example is far superior, as it screams its intent loud and proud: I am `T`, and I am ~generic~ type-safe!
 
+# Improved Type-Safety
+
+Due to a fact how easy it is to introduce a new type in Go, you can benefit from improved type-safety by introducing your own `T`'s:
+
+```go
+type U T
+
+func SafeExcellence(things ...T) U
+```
+
 # Backwards Compatibility
 `T` meets the standard of golang by matching its stance on backwards compatibility. Until a 2.0 release of generics, which may never happen, `T` will always be 100% backwards compatible with it's initial 1.0 release.
 
